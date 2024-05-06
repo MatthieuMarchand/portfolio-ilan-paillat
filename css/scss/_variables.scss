@@ -1,0 +1,40 @@
+$black: #101010;
+$white: #f6f6f6;
+
+$transition-duration: 0.6s;
+
+$regular: "PPMori-Regular";
+$light: "PPMori-Extralight";
+$bold: "PPMori-SemiBold";
+$italic: "PPMori-RegularItalic";
+
+@font-face {
+  font-family: "PPMori-Regular";
+  src: url("/font-pp_mori/PPMori-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PPMori-Extralight";
+  src: url("/font-pp_mori/PPMori-Extralight.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PPMori-SemiBold";
+  src: url("/font-pp_mori/PPMori-SemiBold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PPMori-RegularItalic";
+  src: url("/font-pp_mori/PPMori-RegularItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin font($font-family: $regular, $font-size: 18px) {
+  font-family: $font-family;
+  font-size: $font-size;
+  letter-spacing: 8%;
+}

@@ -1,0 +1,301 @@
+@font-face {
+  font-family: "PPMori-Regular";
+  src: url("/font-pp_mori/PPMori-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PPMori-Extralight";
+  src: url("/font-pp_mori/PPMori-Extralight.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PPMori-SemiBold";
+  src: url("/font-pp_mori/PPMori-SemiBold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PPMori-RegularItalic";
+  src: url("/font-pp_mori/PPMori-RegularItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  background-color: #101010;
+  color: #f6f6f6;
+  font-family: "PPMori-Regular";
+  font-size: 18px;
+  letter-spacing: 8%;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #101010;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #101010;
+  border-radius: 0;
+  border-right: 1px solid #f6f6f6;
+}
+
+.cta {
+  position: relative;
+  font-family: "PPMori-RegularItalic";
+  font-size: 16px;
+  letter-spacing: 8%;
+  border: solid 1px #f6f6f6;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  color: #f6f6f6;
+  text-decoration: none;
+  display: flex;
+  gap: 0.5rem;
+  overflow: hidden;
+  transition-duration: 0.2s;
+}
+
+.cta:hover {
+  color: #101010;
+}
+
+.cta::after {
+  content: url("/pictures/arrow.png");
+  mix-blend-mode: difference;
+}
+
+.cta:before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition-duration: 0.6s;
+  transition-timing-function: ease;
+}
+
+.cta:hover:before {
+  transform: unset;
+}
+
+@media screen and (max-width: 55rem) {
+  html {
+    font-size: 14px;
+  }
+  .cta {
+    font-size: 12px;
+  }
+}
+#hero {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+#hero *:not(img, span) {
+  opacity: 0;
+  animation: opacity-hero 0.6s ease-out 0.4s forwards;
+}
+#hero h1 {
+  overflow: hidden;
+  font-size: 48px;
+  display: flex;
+}
+#hero h3 {
+  font-family: "PPMori-Extralight";
+  font-size: 24px;
+  letter-spacing: 8%;
+}
+#hero img {
+  height: 0;
+  width: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  animation: img-hero 1.3s ease 1.1s forwards;
+}
+#hero .paragraphes {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 16px;
+}
+
+h1 span {
+  display: block;
+  transform: translateY(100%);
+  animation: h1 0.6s ease-out 1.4s forwards;
+}
+
+@keyframes h1 {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: unset;
+  }
+}
+@keyframes opacity-hero {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes img-hero {
+  from {
+    height: 0;
+  }
+  to {
+    height: 19rem;
+  }
+}
+@media screen and (max-width: 55rem) {
+  #hero {
+    padding: 0 3rem 0 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    gap: 1rem;
+    opacity: 0;
+    animation: opacity-hero 0.6s ease-out 0.4s forwards;
+  }
+  #hero h1 span {
+    display: block;
+    transform: unset;
+    animation: unset;
+  }
+  #hero h1 {
+    font-size: 32px;
+    justify-content: center;
+  }
+  #hero h3 {
+    font-size: 18px;
+  }
+  #hero img {
+    height: unset;
+    width: 10rem;
+    animation: unset;
+  }
+  #hero .paragraphes {
+    align-items: center;
+    text-align: center;
+  }
+  #hero .paragraphes p {
+    text-align: start;
+  }
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6rem;
+}
+.project h2 {
+  font-size: 32px;
+  text-align: center;
+}
+.project h3 {
+  font-family: "PPMori-Extralight";
+  font-size: 20px;
+  letter-spacing: 8%;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+.project .content {
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+}
+.project .content img {
+  width: 20rem;
+}
+.project .content .paragraphes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.project .content .paragraphes .buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 55rem) {
+  .project {
+    padding: 6rem 2rem 0 2rem;
+  }
+  .project h2 {
+    font-size: 24px;
+  }
+  .project h3 {
+    font-size: 16px;
+  }
+  .project .content {
+    margin-top: 1.5rem;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .project .content .paragraphes {
+    font-size: 14px;
+  }
+  .project .content .paragraphes br {
+    display: none;
+  }
+  .project .content .paragraphes .buttons {
+    margin: 0.5rem 0 0.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .project .content img {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+footer {
+  margin-top: 10rem;
+  border-top: solid 1px #f6f6f6;
+}
+footer .paragraphes {
+  margin: 3rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  font-family: "PPMori-Extralight";
+  font-size: 22px;
+  letter-spacing: 8%;
+}
+footer .paragraphes a {
+  font-family: "PPMori-Regular";
+  color: #f6f6f6;
+}
+footer .copyright {
+  border-top: solid 1px #f6f6f6;
+  padding: 0.5rem 0 0.5rem;
+  text-align: center;
+  font-family: "PPMori-Extralight";
+  font-size: 16px;
+  letter-spacing: 8%;
+}
+
+@media screen and (max-width: 55rem) {
+  footer .paragraphes {
+    font-size: 18px;
+    margin: 2.5rem 0 2.5rem;
+  }
+  footer .copyright {
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=style.css.map */

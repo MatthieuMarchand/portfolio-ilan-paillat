@@ -1,0 +1,110 @@
+#hero {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+
+  *:not(img, span) {
+    opacity: 0;
+    animation: opacity-hero $transition-duration ease-out 0.4s forwards;
+  }
+
+  h1 {
+    overflow: hidden;
+    font-size: 48px;
+    display: flex;
+  }
+
+  h3 {
+    @include font($light, 24px);
+  }
+
+  img {
+    height: 0;
+    width: 15rem;
+    object-fit: cover;
+    animation: img-hero 1.3s ease 1.1s forwards;
+  }
+
+  .paragraphes {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+  }
+}
+
+h1 span {
+  display: block;
+  transform: translateY(100%);
+  animation: h1 0.6s ease-out 1.4s forwards;
+}
+
+@keyframes h1 {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: unset;
+  }
+}
+
+@keyframes opacity-hero {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes img-hero {
+  from {
+    height: 0;
+  }
+  to {
+    height: 19rem;
+  }
+}
+
+@media screen and (max-width: 55rem) {
+  #hero {
+    padding: 0 3rem 0 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    gap: 1rem;
+    opacity: 0;
+    animation: opacity-hero $transition-duration ease-out 0.4s forwards;
+
+    h1 span {
+      display: block;
+      transform: unset;
+      animation: unset;
+    }
+
+    h1 {
+      font-size: 32px;
+      justify-content: center;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    img {
+      height: unset;
+      width: 10rem;
+      animation: unset;
+    }
+
+    .paragraphes {
+      align-items: center;
+      text-align: center;
+      p {
+        text-align: start;
+      }
+    }
+  }
+}

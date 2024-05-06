@@ -1,0 +1,66 @@
+html,
+body {
+  background-color: $black;
+  color: $white;
+  @include font;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+body::-webkit-scrollbar-track {
+  background: $black;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $black;
+  border-radius: 0;
+  border-right: 1px solid $white;
+}
+
+.cta {
+  position: relative;
+  @include font($italic, 16px);
+  border: solid 1px $white;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  color: $white;
+  text-decoration: none;
+  display: flex;
+  gap: 0.5rem;
+  overflow: hidden;
+  transition-duration: 0.2s;
+}
+.cta:hover {
+  color: $black;
+}
+.cta::after {
+  content: url("/pictures/arrow.png");
+  mix-blend-mode: difference;
+}
+.cta:before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: $white;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition-duration: $transition-duration;
+  transition-timing-function: ease;
+}
+.cta:hover:before {
+  transform: unset;
+}
+
+@media screen and (max-width: 55rem) {
+  html {
+    font-size: 14px;
+  }
+
+  .cta {
+    font-size: 12px;
+  }
+}
