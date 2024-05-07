@@ -1,5 +1,5 @@
 footer {
-  margin-top: 10rem;
+  margin-top: $margin-between-projects;
   border-top: solid 1px $white;
 
   .paragraphes {
@@ -26,8 +26,9 @@ footer {
 
 @media screen and (max-width: 55rem) {
   footer {
+    margin-top: $margin-between-projects-mobile;
     .paragraphes {
-      font-size: 18px;
+      font-size: 20px;
       margin: 2.5rem 0 2.5rem;
     }
     .copyright {
