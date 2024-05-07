@@ -2,7 +2,7 @@ html,
 body {
   background-color: $black;
   color: $white;
-  @include font;
+  @include font($font-size: 18px);
   scroll-behavior: smooth;
 }
 
@@ -28,13 +28,14 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   gap: 0.5rem;
   overflow: hidden;
-  transition-duration: 0.2s;
+  transition-duration: 0.3s;
+  transition-delay: 0.35s;
 }
 .cta:hover {
   color: $black;
 }
 .cta::after {
-  content: url("/pictures/arrow.png");
+  content: url("/pictures/arrow.svg");
   mix-blend-mode: difference;
 }
 .cta:before {
@@ -48,19 +49,20 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   z-index: -1;
   transform: translateX(-100%);
-  transition-duration: $transition-duration;
-  transition-timing-function: ease;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 }
 .cta:hover:before {
   transform: unset;
 }
 
 @media screen and (max-width: 55rem) {
-  html {
-    font-size: 14px;
+  html,
+  body {
+    font-size: 16px;
   }
 
   .cta {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
