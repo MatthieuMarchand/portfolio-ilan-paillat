@@ -99,7 +99,10 @@ body::-webkit-scrollbar-thumb {
 @media screen and (max-width: 55rem) {
   body {
     font-size: 16px;
-    padding: 0 3rem 0 3rem;
+  }
+  section {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
   .cta {
     font-size: 14px;
@@ -227,6 +230,7 @@ body::-webkit-scrollbar-thumb {
   margin-top: 4rem;
   display: flex;
   gap: 3rem;
+  align-items: center;
 }
 .project .content img {
   width: 20rem;
