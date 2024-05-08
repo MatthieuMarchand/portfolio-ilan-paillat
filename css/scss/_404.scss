@@ -1,0 +1,45 @@
+section#erreur404 {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    margin: auto auto;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 22px;
+
+    h1 {
+      font-size: 56px;
+    }
+
+    p {
+      line-height: $line-height;
+    }
+  }
+
+  footer {
+    margin-top: unset;
+  }
+}
+
+@media screen and (max-width: 55rem) {
+  section#erreur404 {
+    padding: unset;
+
+    .content {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      h1 {
+        font-size: 40px;
+      }
+
+      br {
+        display: none;
+      }
+    }
+  }
+}

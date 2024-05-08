@@ -108,6 +108,45 @@ body::-webkit-scrollbar-thumb {
     font-size: 14px;
   }
 }
+section#erreur404 {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+section#erreur404 .content {
+  margin: auto auto;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 22px;
+}
+section#erreur404 .content h1 {
+  font-size: 56px;
+}
+section#erreur404 .content p {
+  line-height: 24px;
+}
+section#erreur404 footer {
+  margin-top: unset;
+}
+
+@media screen and (max-width: 55rem) {
+  section#erreur404 {
+    padding: unset;
+  }
+  section#erreur404 .content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  section#erreur404 .content h1 {
+    font-size: 40px;
+  }
+  section#erreur404 .content br {
+    display: none;
+  }
+}
 #hero {
   height: 100dvh;
   display: flex;
