@@ -29,7 +29,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   @include font($italic, 16px);
   border: solid 1px $white;
-  padding: 0.5rem 2rem 0.5rem 2rem;
+  padding: 0.6rem 2rem 0.5rem 2rem;
   color: $white;
   text-decoration: none;
   display: flex;
@@ -75,5 +75,34 @@ body::-webkit-scrollbar-thumb {
 
   .cta {
     font-size: 14px;
+  }
+}
+
+.btn-contact {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: $white;
+  color: $black;
+  z-index: 1;
+  transition: unset;
+  transition: transform 0.4s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &::after {
+    content: "";
+  }
+
+  &::before {
+    transition: unset;
+  }
+}
+
+@media screen and (max-width: 55rem) {
+  .btn-contact {
+    display: none;
   }
 }
